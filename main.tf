@@ -1,7 +1,7 @@
 # Terraform configuration goes here
 provider "google" {
   project = var.project
-  credentials = file("C:\\Users\\Rupinder Kaur Kahlon\\Downloads\\cellular-nuance-325307-c925712274b3.json")
+ #credentials = file("**.json")
   region  = var.region
   zone    = var.zone
 }
