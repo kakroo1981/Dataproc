@@ -135,3 +135,24 @@ resource "google_compute_firewall" "allow_ssh" {
 
  source_ranges = ["0.0.0.0/0"]
 }
+ 
+resource "google_compute_firewall" "default" {
+ name    = "dataproc-network-default"
+ network = google_compute_network.dataproc_network.name
+
+ allow {
+   protocol = "icmp"
+ 
+ }
+ 
+ allow {
+   protocol = "tcp"
+   ports    = ["80", "8080", "1000-2000"]
+ }
+  
+ allow {
+   protocol = "udp"
+   
+ } 
+ 
+}
